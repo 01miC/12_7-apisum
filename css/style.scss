@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
+
+$pagebg:rgb(247, 247, 247);
+$maincolor:#6eefc8;
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+*{box-sizing: border-box;}
+
+html,
+body {
+  margin: 0 auto;
+  height: 100%;
+
+  color:rgb(53, 53, 53);
+}
+
+body {
+  display: flex;
+  align-items: flex-start;
+  font-family: 'Roboto';
+  justify-content: center;
+  background: $pagebg;
+}
+
+.board {
+    width:100vw;
+    
+    h1 {
+        width:100%;
+        line-height:60px;
+        text-align:center;
+        
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: row;
+            >button {
+                background: none;
+                border: 2px solid;
+                font-size: 0.5em;
+                line-height: 1;
+                margin: 0.5em;
+                padding: 0.5em 1em;
+                
+            }
+    }
+   
+}
+.column-container {
+	display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    .column {
+        min-height:400px;
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width:30%;
+        border-radius:10px; 
+        margin:0 10px 30px 10px;  
+        box-shadow: -3px 4px 2px -2px rgba(0,0,0,0.29);
+        background-color: rgba(110,239,200,1);
+        background: rgba(110,239,200,1);
+        background: linear-gradient(to bottom, rgba(110,239,200,0.31) 0%, rgba(110,239,200,0.31) 5%, rgba(110,239,200,0.21) 71%,rgba(208,237,112,0) 100%);
+        .close {
+            position:absolute;
+            top:10px;
+            right:10px;
+            color:#000;
+            background-color:darken($maincolor,20%);
+            border-color:darken($maincolor,20%);
+            &:hover {
+                border-color:adjust-hue($maincolor, 15deg);
+                background-color:adjust-hue($maincolor, 15deg);
+            }
+        }
+        .add-card {
+            color: #fff;
+            background-color: darken($maincolor,50%);
+            border-color: darken($maincolor,50%);
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+                &:active,
+                &:focus {
+                    border-color:none;
+                }
+        }
+        
+        
+    }
+    .column-title {
+        text-align:center;
+    }
+    .column-card-list {
+        min-height:200px;
+        list-style-type: none;
+        background-color:rgba(110,239,200,0.4);
+        border-radius:10px;
+        width:100%;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 0px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        position:relative;
+        >li {
+            border-radius: 10px;
+            background-color:rgba(255, 255, 255, 0.4);
+            width:90%;
+            margin:5px 0;
+            
+            >button {
+                transform: scale(0.7);
+                float:right;
+                color:#000;
+                background-color:darken($maincolor,20%);
+                border-color:darken($maincolor,20%);
+                &:hover {
+                    border-color:adjust-hue($maincolor, 15deg);
+                    background-color:adjust-hue($maincolor, 15deg);
+                }
+            }
+            >p{
+                padding:10px;
+                width:70%;
+            }
+        }
+        
+    }
+}
+///////////////////////////////////////////////////////////////////////////
+
+
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+$colors: (
+
+  pulse: #6eefc8, 
+  close: #fc474a, 
+
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 10deg)};
+  }
+}
+
+
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  border-radius:5px;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 1em rgba(#fff,0);
+}
+
