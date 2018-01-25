@@ -33,6 +33,7 @@ body {
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
   display: flex;
+  flex: 8;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
@@ -109,7 +110,7 @@ body {
   text-align: center;
 }
 
-.column-container .column-card-list {
+.column-container .card-list {
   min-height: 200px;
   list-style-type: none;
   background-color: rgba(110, 239, 200, 0.4);
@@ -127,14 +128,14 @@ body {
   position: relative;
 }
 
-.column-container .column-card-list > li {
+.column-container .card-list > li {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.4);
   width: 90%;
   margin: 5px 0;
 }
 
-.column-container .column-card-list > li > button {
+.column-container .card-list > li > button {
   transform: scale(0.7);
   float: right;
   color: #000;
@@ -142,12 +143,12 @@ body {
   border-color: #19dea3;
 }
 
-.column-container .column-card-list > li > button:hover {
+.column-container .card-list > li > button:hover {
   border-color: #6eefe8;
   background-color: #6eefe8;
 }
 
-.column-container .column-card-list > li > p {
+.column-container .card-list > li > p {
   padding: 10px;
   width: 70%;
 }
@@ -175,12 +176,12 @@ button {
 }
 
 button:hover, button:focus {
-  border-color: var(--hover);
-  color: #fff;
+  border-color: #3eb18e;
+  color: #3eb18e;
 }
 
 .pulse:hover,
 .pulse:focus {
   animation: pulse 1s;
-  box-shadow: 0 0 0 1em rgba(255, 255, 255, 0);
+  box-shadow: 0 0 0 1em rgba(59, 59, 59, 0);
 }

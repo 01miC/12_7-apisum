@@ -35,10 +35,12 @@ body {
         -webkit-margin-before: 0em;
         -webkit-margin-after: 0em;
         display: flex;
+            flex:8;
             align-items: center;
             justify-content: space-around;
             flex-direction: row;
             >button {
+                
                 background: none;
                 border: 2px solid;
                 font-size: 0.5em;
@@ -47,7 +49,9 @@ body {
                 padding: 0.5em 1em;
                 
             }
+            
     }
+    
    
 }
 .column-container {
@@ -107,7 +111,7 @@ body {
     .column-title {
         text-align:center;
     }
-    .column-card-list {
+    .card-list {
         min-height:200px;
         list-style-type: none;
         background-color:rgba(110,239,200,0.4);
@@ -179,13 +183,13 @@ button {
   
   &:hover,
   &:focus { 
-    border-color: var(--hover);
-    color: #fff;
+    border-color: #3eb18e;
+    color: #3eb18e;
   }
 }
 .pulse:hover, 
 .pulse:focus {
   animation: pulse 1s;
-  box-shadow: 0 0 0 1em rgba(#fff,0);
+  box-shadow: 0 0 0 1em rgba(#3b3b3b,0);
 }
 
